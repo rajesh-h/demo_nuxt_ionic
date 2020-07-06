@@ -1,37 +1,30 @@
 <template>
-  <!-- Add some ionic markup... -->
-  <ion-page>
-    <ion-header>
-      <ion-toolbar class="toolbar-md-primary">
-        <ion-title>Ionic Nuxt App</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path
-        fill="#0099ff"
-        fill-opacity="1"
-        d="M0,224L48,202.7C96,181,192,139,288,138.7C384,139,480,181,576,192C672,203,768,181,864,144C960,107,1056,53,1152,64C1248,75,1344,149,1392,186.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-      ></path>
-    </svg>
-    <Logo />
-    <ion-content class="content">
-      <ion-card>
-        <ion-card-subtitle>Ololo</ion-card-subtitle>
-        <ion-card-title>Trololo</ion-card-title>
-        <ion-card-content>
-          <h1>Hololo!</h1>
-        </ion-card-content>
-      </ion-card>
-    </ion-content>
-  </ion-page>
+  <ion-split-pane when="sm" content-id="main-content">
+    <Menu />
+    <div id="main-content" class="ion-page">
+      <Header />
+      <ion-content class="ion-padding" fullscreen>
+        <ion-button @click="goToProducts">Products</ion-button>
+      </ion-content>
+    </div>
+  </ion-split-pane>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import Menu from '~/components/blocks/Menu'
+import Header from '~/components/blocks/Header'
 export default {
-  components: {
-    Logo,
+  components: { Menu, Header },
+
+  data() {
+    return {}
+  },
+  methods: {
+    goToProducts() {
+      this.$router.push({
+        name: 'products',
+      })
+    },
   },
 }
 </script>

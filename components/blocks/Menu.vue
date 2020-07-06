@@ -1,0 +1,25 @@
+<template>
+  <ion-menu content-id="main-content">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-list-header>
+          Navigate
+        </ion-list-header>
+        <ion-menu-toggle auto-hide="false">
+          <ion-item button>
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label>
+              Home
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+</template>
